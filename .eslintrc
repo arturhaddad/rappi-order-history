@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "prettier",
+    "plugin:@next/next/recommended"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["react-hooks"],
+  "ignorePatterns": ["/src/graphql/graphql-generated.ts"],
+  "rules": {
+    "import/no-extraneous-dependencies": ["off", { "devDependencies": true }],
+    "import/order": "off",
+    "import/extensions": "off",
+    "padded-blocks": ["error", { "blocks": "never" }],
+    "semi": "error",
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
+    // suppress errors for missing 'import React' in files
+    "react/react-in-jsx-scope": "off",
+    // allow jsx syntax in js files (for next.js project)
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }], //should add ".ts" if typescript project
+    "react/require-default-props": "off",
+    "import/prefer-default-export": "off",
+    "no-underscore-dangle": "off",
+    "no-console": "error",
+    "react/jsx-props-no-spreading": "off"
+  }
+}
